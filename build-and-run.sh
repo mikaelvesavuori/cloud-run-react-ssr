@@ -1,0 +1,1 @@
+docker build --tag ssr:1.0 . && docker run --publish 8080:8080 --detach --name ssr ssr:1.0

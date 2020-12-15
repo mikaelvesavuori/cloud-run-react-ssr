@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "jsx": "react",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "importHelpers": true,
+    "lib": [
+      "esnext",
+      "dom"
+    ],
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "noEmit": false,
+    "noEmitOnError": true,
+    "noFallthroughCasesInSwitch": false,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "outDir": "dist",
+    "removeComments": true,
+    "sourceMap": false,
+    "strict": false,
+    "strictFunctionTypes": false,
+    "target": "esnext"
+  },
+  "exclude": [
+    "./__tests",
+    "./node_modules/",
+    "./src/node_modules/"
+  ],
+  "include": [
+    "./src"
+  ]
+}

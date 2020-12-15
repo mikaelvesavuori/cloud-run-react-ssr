@@ -1,0 +1,35 @@
+{
+  "name": "cloud-run-ssr",
+  "version": "1.0.0",
+  "description": "React SSR on Cloud Run",
+  "main": "server.tsx",
+  "scripts": {
+    "start": "ts-node server.tsx",
+    "lint": "eslint '*/**/*.{js,ts}' --quiet --fix"
+  },
+  "author": "Mikael Vesavuori",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "http-proxy-middleware": "^1.0.6",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-router-dom": "^5.2.0"
+  },
+  "keywords": [
+    "gcp",
+    "cloud run",
+    "react",
+    "ssr",
+    "serverside rendering"
+  ],
+  "devDependencies": {
+    "@types/express": "^4.17.9",
+    "@types/node": "^14.14.12",
+    "@types/react-dom": "^17.0.0",
+    "@types/react-router-dom": "^5.1.6",
+    "ts-node": "^9.1.1",
+    "tslib": "^2.0.3",
+    "typescript": "^4.1.3"
+  }
+}

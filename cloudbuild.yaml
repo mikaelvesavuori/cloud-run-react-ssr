@@ -1,0 +1,43 @@
+steps:
+  - name: 'node'
+    entrypoint: 'npm'
+    id: Install
+    args:
+      - 'install'
+    dir: 'src'
+  - name: 'docker'
+    id: Build
+    args: ['build', '-t', '$_REGION-docker.pkg.dev/$PROJECT_ID/$_REPO_NAME/$_IMAGE', '.']
+  - name: 'docker'
+    id: Push
+    args: ['push', '$_REGION-docker.pkg.dev/$PROJECT_ID/$_REPO_NAME/$_IMAGE']
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    id: Deploy
+    entrypoint: gcloud
+    args:
+      [
+        'beta',
+        'run',
+        'deploy',
+        '$_SERVICE_NAME',
+        '--image',
+        '$_REGION-docker.pkg.dev/$PROJECT_ID/$_REPO_NAME/$_IMAGE',
+        '--region',
+        '$_REGION',
+        '--platform',
+        'managed',
+        '--memory',
+        '4Gi',
+        '--cpu',
+        '4',
+        '--min-instances',
+        '0',
+        '--allow-unauthenticated',
+      ]
+
+substitutions:
+  _REGION: 'europe-north1'
+  _SERVICE_NAME: 'cloudrunssr'
+  _REPO_NAME: 'cloudrunssr'
+  _IMAGE: 'ssr'
+images: ['$_REGION-docker.pkg.dev/$PROJECT_ID/$_REPO_NAME/$_IMAGE']
