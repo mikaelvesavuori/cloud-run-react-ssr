@@ -15,11 +15,11 @@ The below is primarily relevant if you want to deploy this on Cloud Run. Else, y
 - You have a Google Cloud Platform account
 - You are logged-in on the Google Cloud Platform
 - You have credentials that can deploy and run applications on Cloud Run (including building them on Cloud Build)
-- You've put in your own project ID `scripts/vars.sh`
+- You've put in your own project ID in `scripts/vars.sh`
 
 ## Develop and test
 
-There's a basic `build-and-run.sh` script that will build and run the server with Docker. You can also just run `npm run start` in the `src` folder.
+There's a basic `build-and-run.sh` script that will build and run the server with Docker. You can also just run `npm run start` in the `src` folder to run the application code without containerizing it.
 
 ## Initialize resources
 
